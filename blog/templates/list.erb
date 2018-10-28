@@ -9,5 +9,11 @@
     <p>
       This is my favorite posts list:
     </p>
+
+    <ul>
+      <% posts.each do |post| %>
+        <li><%= post %></li>
+      <% end %>
+    </ul>
   </body>
 </html>
