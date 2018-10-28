@@ -1,6 +1,10 @@
 require 'sinatra'
 
+require './storage'
+
 set :views, settings.root + '/templates'
+
+storage = Storage.new
 
 # welcome page: static page
 get '/' do
@@ -9,14 +13,14 @@ end
 
 # list of posts: page filled from storage (in-memory pseudo-db)
 get '/posts' do
-  posts = ['First post', 'Second post', 'Last post']
+  posts = storage.all
   erb :list, locals: { posts: posts }
 end
 
 # страница одного поста. Берем из хранилища (почти-БД),
 # искать его будем через id (идентификатор)
 get '/posts/:id' do
-  post = { id: params[:id], title: "Post ##{params[:id]}", text: 'hello world' }
+  post = storage.find(params[:id].to_i)
   erb :post, locals: { post: post }
 end
 
@@ -28,5 +32,6 @@ end
 
 # обработчик запроса создания поста
 post '/posts' do
+  storage.create(params[:title], params[:text])
   redirect to('/posts')
 end

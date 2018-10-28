@@ -10,10 +10,20 @@
       This is my favorite posts list:
     </p>
 
+    <% if posts.empty? # posts.count == 0 %>
+      <h2>There are no posts, go and create one!</h2>
+    <% end %>
+
     <ul>
       <% posts.each do |post| %>
-        <li><%= post %></li>
+        <li>
+          <h3><%= post[:title] %></h3>
+          <div><%= post[:text] %></div>
+          <p><a  href="/posts/<%= post[:id] %>">Read more</a></p>
+        </li>
       <% end %>
     </ul>
+
+    <a href="/create/posts">Create post</a>
   </body>
 </html>
