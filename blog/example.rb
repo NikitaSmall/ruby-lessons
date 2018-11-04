@@ -1,18 +1,36 @@
-require 'json'
+$stdout.sync = true
+require 'mongo'
 
-variable = [
-  { value: 42, text: 'Hello world!' },
-  { value: 44, text: 'Hello world!' }
-]
+Mongo::Logger.logger.level = Logger::FATAL
+client = Mongo::Client.new(['127.0.0.1'], database: 'ruby')
 
-json_str = variable.to_json
+# student_collection = client[:student]
 
-f = File.new('json.txt', 'w')
-f.write(json_str)
-f.close
+# student = { name: 'Dima', gender: 'male', age: 14 }
+# student_collection.insert_one(student)
+#
+# array = student_collection.find.to_a
+# puts array
 
-file_str = File.new('json.txt', 'r').read
-puts file_str
-value = JSON.parse(file_str, symbolize_names: true)
+# client[:people].insert_one({
+#   name: 'Nikita',
+#   age: 13,
+#   hobbies: ['create games', 'painting'],
+#   pets: [
+#     {
+#       type: 'cat',
+#       name: 'Ginger'
+#     },
+#     {
+#       type: 'cat',
+#       name: 'Vasya'
+#     },
+#     {
+#       type: 'cat',
+#       name: 'Shlema'
+#     }
+#   ]
+# })
 
-puts value[0][:value]
+human = client[:people].find({ 'pets.0.name' => 'Ginger' }).first
+puts human
