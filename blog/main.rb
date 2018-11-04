@@ -1,6 +1,7 @@
 require 'sinatra'
 
 require './storage'
+require './faq'
 
 set :views, settings.root + '/templates'
 
@@ -8,7 +9,15 @@ storage = Storage.new
 
 # welcome page: static page
 get '/' do
-  erb :welcome
+  questions = FAQ.new.questions
+  erb :welcome, locals: { faqs: questions }
+end
+
+get '/faq/{id}' do
+  # faq_storage = FAQ.new
+  # faq = faq_storage.find(params[:id])
+  faq = FAQ.new.find(params[:id].to_i)
+  erb :faq, locals: { faq: faq }
 end
 
 # list of posts: page filled from storage (in-memory pseudo-db)

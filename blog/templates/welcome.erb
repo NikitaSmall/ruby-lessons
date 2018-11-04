@@ -13,5 +13,14 @@
     <p>
       <a href="/posts">Here is posts list</a>
     </p>
+
+    <div>
+      <p>FAQ list:</p>
+      <ul>
+        <% faqs.each do |faq| %>
+          <li><a href="/faq/<%= faq[:id] %>"><%= faq[:question] %></a></li>
+        <% end %>
+      </ul>
+    </div>
   </body>
 </html>
