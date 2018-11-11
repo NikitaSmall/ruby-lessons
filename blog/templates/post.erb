@@ -8,9 +8,9 @@
     <% if post.nil? %>
       <h1>Your post was not found!</h1>
     <% else %>
-      <h1>Post title: <%= post[:title] %></h1>
+      <h1>Post title: <%= post['title'] %></h1>
       <p>
-        Post text: <%= post[:text] %>
+        Post text: <%= post['text'] %>
       </p>
     <% end %>
     <a href="/posts">return to post list</a>

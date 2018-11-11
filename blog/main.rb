@@ -5,18 +5,19 @@ require './faq'
 
 set :views, settings.root + '/templates'
 
-storage = Storage.new
+client = Mongo::Client.new(['127.0.0.1'], database: 'blog')
+
+storage = Storage.new(client)
+faqs = FAQ.new(client)
 
 # welcome page: static page
 get '/' do
-  questions = FAQ.new.questions
+  questions = faqs.questions
   erb :welcome, locals: { faqs: questions }
 end
 
 get '/faq/{id}' do
-  # faq_storage = FAQ.new
-  # faq = faq_storage.find(params[:id])
-  faq = FAQ.new.find(params[:id].to_i)
+  faq = faqs.find(params[:id])
   erb :faq, locals: { faq: faq }
 end
 
@@ -29,7 +30,7 @@ end
 # страница одного поста. Берем из хранилища (почти-БД),
 # искать его будем через id (идентификатор)
 get '/posts/:id' do
-  post = storage.find(params[:id].to_i)
+  post = storage.find(params[:id])
   erb :post, locals: { post: post }
 end
 

@@ -8,9 +8,9 @@
     <% if faq.nil? %>
       <h1>Your FAQ was not found!</h1>
     <% else %>
-      <h1>FAQ question: <%= faq[:question] %></h1>
+      <h1>FAQ question: <%= faq['question'] %></h1>
       <p>
-        FAQ answer: <%= faq[:answer] %>
+        FAQ answer: <%= faq['answer'] %>
       </p>
     <% end %>
     <a href="/posts">return to post list</a>
