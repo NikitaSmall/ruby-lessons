@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>
+      Shop list page
+    </title>
+  </head>
+  <body>
+    <h1>Products list</h1>
+
+    <% if products.count == 0 %>
+      <h2>There are no products</h2>
+    <% end %>
+
+    <ul>
+      <% products.each do |product| %>
+        <li>
+          <h3><%= product['name'] %></h3>
+          <div><%= product['desc'] %></div>
+          <div><%= product['price'] %></div>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
