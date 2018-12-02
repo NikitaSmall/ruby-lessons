@@ -4,11 +4,11 @@ class LoginPage < Page
   end
 
   def enter_country_code
-    page.find(@selectors['country_code_field']).fill_in with: @config['country_code']
+    page.find(@selectors['country_code_field']).fill_in with: CONFIG.account['country_code']
   end
 
   def enter_phone_number
-    page.find(@selectors['phone_number_field']).fill_in with: @config['phone_number']
+    page.find(@selectors['phone_number_field']).fill_in with: CONFIG.account['phone_number']
   end
 
   def click_next_step_button

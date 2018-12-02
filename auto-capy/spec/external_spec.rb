@@ -15,7 +15,7 @@ describe "the greet process", type: :feature do
     code_page.enter_code
 
     chat_page = ChatPage.new
-    chat_page.visit_chat('https://web.telegram.org/#/im?p=@BTCget_bot')
-    chat_page.submit_message('hello world!')
+    chat_page.visit_chat('https://web.telegram.org/#/im?p=s1277475926_17771682022850678792')
+    chat_page.submit_message(CONFIG.message)
   end
 end

@@ -10,4 +10,12 @@ class Config
     @selectors = YAML.load(File.read(File.dirname(__FILE__) + SELECTORS_FILE))
     @config = YAML.load(File.read(File.dirname(__FILE__) + CONFIG_FILE))
   end
+
+  def message
+    @config['messages'].sample
+  end
+
+  def account
+    @config['accounts'].sample
+  end
 end

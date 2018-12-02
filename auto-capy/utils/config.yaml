@@ -1,6 +1,11 @@
 ---
   login_page_url: https://web.telegram.org/#/login
-  country_code: '+1'
-  phone_number: '4079013307'
   user_interaction_annotation: 'Enter the code from SMS/Telegram:'
   default_sleep_value: 5
+  messages:
+    - hello world!
+    - do your homework?
+    - how are you doing?
+  accounts:
+    - country_code: '+1'
+      phone_number: '4255332767'
