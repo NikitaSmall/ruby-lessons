@@ -1,0 +1,48 @@
+#! /c/RailsInstaller/Ruby2.3.3/bin/ruby
+
+require 'optparse'
+
+require_relative './runner'
+require_relative './utils/config'
+
+require_relative './pages/page'
+require_relative './pages/search_page'
+require_relative './pages/chat_page'
+require_relative './pages/code_page'
+require_relative './pages/login_page'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: searcher -s search_string"
+
+  opts.on("-s", "--search [string]", String, "Search this string at google.com") do |str|
+    options[:search_string] = str
+  end
+
+  opts.on("--command [string]", String, "Specify desired command: telegram or google") do |com|
+    options[:command] = com
+  end
+
+  opts.on("-c", "--code [string]", String, "Specify desired code") do |code|
+    options[:code] = code
+  end
+
+  opts.on("-p", "--phone [string]", String, "Specify desired phone") do |phone|
+    options[:phone] = phone
+  end
+
+  opts.on("-u", "--url [string]", String, "Specify desired url") do |url|
+    options[:url] = url
+  end
+
+  opts.on("-m", "--message [string]", String, "Specify desired message") do |message|
+    options[:message] = message
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+end.parse!
+
+Runner.new(options).run!

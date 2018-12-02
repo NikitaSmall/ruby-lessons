@@ -1,0 +1,5 @@
+---
+  login_page_url: https://web.telegram.org/#/login
+  user_interaction_annotation: 'Enter the code from SMS/Telegram:'
+  search_url: https://www.google.com
+  default_sleep_value: 5
