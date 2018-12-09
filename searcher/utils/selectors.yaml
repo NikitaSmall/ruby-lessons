@@ -6,3 +6,7 @@
   bing_search_button: .b_searchboxSubmit
   bing_search_field: .b_searchbox
   bing_search_result_link: .b_title h2 a
+
+  duck_search_button: '#search_button_homepage'
+  duck_search_field: '#search_form_input_homepage'
+  duck_search_result_link: .result__a
