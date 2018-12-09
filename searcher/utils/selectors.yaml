@@ -1,12 +1,8 @@
 ---
-  search_button: '#tsf > div:nth-child(2) > div > div.UUbT9 > div.aajZCb > div > center > input[type="submit"]:nth-child(1)'
-  search_field: .gLFyf.gsfi
-  search_result_link: .rc .r a cite
-  country_code_field: body > div.page_wrap > div > div.login_page > div.login_form_wrap > form > div.login_phone_groups_wrap.clearfix > div.md-input-group.login_phone_code_input_group.md-input-has-value.md-input-animated > input
-  phone_number_field: body > div.page_wrap > div > div.login_page > div.login_form_wrap > form > div.login_phone_groups_wrap.clearfix > div.md-input-group.login_phone_num_input_group.md-input-animated > input
-  next_button: body > div.page_wrap > div > div.login_page > div.login_head_wrap.clearfix > div > a
-  phone_confirm_button: body > div.modal.fade.confirm_modal_window.in > div.modal-dialog > div > div > div.md_simple_modal_footer > button.btn.btn-md.btn-md-primary
-  verification_code_field: body > div.page_wrap > div > div.login_page > div.login_form_wrap > form > div.md-input-group.md-input-group-centered.md-input-animated > input
-  hillel_group_button: body > div.page_wrap > div.im_page_wrap.clearfix > div > div.im_dialogs_col_wrap.noselect > div.im_dialogs_col > div > div.im_dialogs_scrollable_wrap.nano-content > ul > li.im_dialog_wrap.active > a
-  message_field: body > div.page_wrap > div.im_page_wrap.clearfix > div > div.im_history_col_wrap.noselect.im_history_loaded > div.im_history_selected_wrap > div > div.im_bottom_panel_wrap > div.im_send_panel_wrap.noselect > div > div > div > form > div.im_send_field_wrap.hasselect > div.composer_rich_textarea
-  send_button: body > div.page_wrap > div.im_page_wrap.clearfix > div > div.im_history_col_wrap.noselect.im_history_loaded > div.im_history_selected_wrap > div > div.im_bottom_panel_wrap > div.im_send_panel_wrap.noselect > div > div > div > form > div.im_send_buttons_wrap.clearfix > button
+  google_search_button: '#tsf > div:nth-child(2) > div > div.UUbT9 > div.aajZCb > div > center > input[type="submit"]:nth-child(1)'
+  google_search_field: .gLFyf.gsfi
+  google_search_result_link: .rc .r a cite
+
+  bing_search_button: .b_searchboxSubmit
+  bing_search_field: .b_searchbox
+  bing_search_result_link: .b_title h2 a
